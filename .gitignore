@@ -1,11 +1,11 @@
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-Gemfile.lock
 
 ## Build generated
 build/
 DerivedData/
+fastlane/upload-symbols
 
 ## Various settings
 *.pbxuser
@@ -27,16 +27,8 @@ xcuserdata/
 *.hmap
 *.ipa
 *.dSYM.zip
-
-## Temp Pact Files
-tmp/
-
-## Project Files
-*.xcodeproj
-*.xcworkspace
-
-## Tuist
-Derived/
+*.dSYM
+*.swift.plist
 
 ## Playgrounds
 timeline.xctimeline
@@ -47,7 +39,7 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
 # Packages/
 # Package.pins
-# Package.resolved
+Package.resolved
 .build/
 
 # CocoaPods
@@ -57,7 +49,9 @@ playground.xcworkspace
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
 Pods/
-Podfile.lock
+#
+# Add this line if you want to avoid checking in source code from the Xcode workspace
+# *.xcworkspace
 
 # Carthage
 #
@@ -77,9 +71,23 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
-**/.DS_Store
-IBAMobileBank.xcworkspace/xcshareddata/swiftpm/Package.resolved
-assets/sdk_config.xml
-assets/trusted_certs.pem
-Gemfile.lock
-env/*.env
+fastlane/.env.default
+out/
+
+# Code Injection
+#
+# After new code Injection tools there's a generated folder /iOSInjectionProject
+# https://github.com/johnno1962/injectionforxcode
+
+iOSInjectionProject/
+
+# .DS_Store
+.DS_Store
+
+# API Keys
+vault-configs.json
+Config-Keys-Beta.json
+Config-Keys-Production.json
+
+# Guardsquare
+.guardsquare/
